@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Планировщик</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <section class="control-panel">
+      <form id="task-form">
+        <label>
+          Задача
+          <input type="text" id="task-input" name="task" autofocus maxlength="100" placeholder="Введите задачу" />
+        </label>
+
+        <label>
+          День недели
+          <select id="day-select" name="day">
+            <option value="1">Понедельник</option>
+            <option value="2">Вторник</option>
+            <option value="3">Среда</option>
+            <option value="4">Четверг</option>
+            <option value="5">Пятница</option>
+            <option value="6">Суббота</option>
+            <option value="7">Воскресенье</option>
+          </select>
+        </label>
+
+        <label>
+          Дата (необязательно)
+          <input type="date" id="date-input" name="date" />
+        </label>
+
+        <label>
+          Приоритет
+          <select id="priority-select" name="priority">
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+          </select>
+        </label>
+
+        <button type="submit" id="submit-task-button">Добавить</button>
+        <button type="button" id="cancel-edit-button" hidden>Отмена</button>
+        <button type="button" id="export-tasks-button">Экспорт</button>
+      </form>
+    </section>
+
+    <section class="calendar">
+      <div id="calendar-board">
+        <div class="calendar-column"><h2>Понедельник</h2></div>
+        <div class="calendar-column"><h2>Вторник</h2></div>
+        <div class="calendar-column"><h2>Среда</h2></div>
+        <div class="calendar-column"><h2>Четверг</h2></div>
+        <div class="calendar-column"><h2>Пятница</h2></div>
+        <div class="calendar-column"><h2>Суббота</h2></div>
+        <div class="calendar-column"><h2>Воскресенье</h2></div>
+      </div>
+    </section>
+
+    <div id="toast-container" aria-live="polite" aria-atomic="true"></div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
